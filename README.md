@@ -3,8 +3,8 @@
 - **Nama Mahasiswa**: I Made Obi Pranata
 - **NIM**: 42430003
 - **Kelas / Prodi**: S1 Teknologi Informasi – UNDIKNAS Denpasar
-- **Tautan Branch / Pull Request GitHub**: https://github.com/obipranata2006/mk40-devops-lab/pull/NOMOR_PR
-- **Nama Rekan Peer-Reviewer**: NAMA_REVIEWER
+- **Tautan Branch / Pull Request GitHub**: https://github.com/obipranata2006/mk40-devops-lab/pull/1
+- **Nama Rekan Peer-Reviewer**: Rosan Kelvino (42430003)
 
 ---
 
@@ -14,7 +14,7 @@
 | :--- | :--- | :--- | :--- |
 | Kebutuhan Go di Host | Wajib | Tidak wajib | Tidak wajib |
 | Ukuran Image | Tidak ada image | 1.32GB | 27.8MB (lulus < 100 MB) |
-| container_or_host_id & NIM | Hostname: HOSTNAME_MAC / NIM: 42430003 | ID: ID_SC02 / NIM: 42430003 | ID: bfbe3afc7f18 / NIM: 42430003 |
+| container_or_host_id & NIM | Hostname: MacBook-Air-obipranata.local / NIM: 42430003 | ID: ID_ANDA_12_KARAKTER / NIM: 42430003 | ID: bfbe3afc7f18 / NIM: 42430003 |
 | User proses (`id`) | User Mac | root (uid=0) | uid=10001 (appuser) |
 | 2 instansi sekaligus | Gagal (port sama) | Berhasil (8081 & 8082) | Berhasil |
 
@@ -27,7 +27,7 @@ Penghematan ukuran image: (1320 MB − 27.8 MB) ÷ 1320 MB × 100% ≈ **97,9%**
 ### A. Tahap 1 – Tanpa Docker
 ![SC-01](docs/screenshots/sc01-tahap1-tanpa-docker.png)
 
-**Analisis:** Pada tahap ini aplikasi dijalankan dengan `go run main.go` langsung di macOS, tanpa Docker. Karena itu nilai `container_or_host_id` berisi hostname Mac saya (HOSTNAME_MAC), bukan ID kontainer: proses berjalan di sistem operasi host. Aplikasi juga hanya bisa berjalan karena compiler Go sudah saya pasang di Mac. Saat `go run main.go` dijalankan kedua kali, instans kedua gagal dengan `bind: address already in use`. Sebuah port (8080) hanya bisa dipakai satu proses pada satu sistem operasi, dan instans pertama sudah memakainya. Ini contoh konflik port tanpa isolasi.
+**Analisis:** Pada tahap ini aplikasi dijalankan dengan `go run main.go` langsung di macOS, tanpa Docker. Karena itu nilai `container_or_host_id` berisi hostname Mac saya (MacBook-Air-obipranata.local), bukan ID kontainer: proses berjalan di sistem operasi host. Aplikasi juga hanya bisa berjalan karena compiler Go sudah saya pasang di Mac. Saat `go run main.go` dijalankan kedua kali, instans kedua gagal dengan `bind: address already in use`. Sebuah port (8080) hanya bisa dipakai satu proses pada satu sistem operasi, dan instans pertama sudah memakainya. Ini contoh konflik port tanpa isolasi.
 
 ### B. Tahap 2 – Single-Stage
 ![SC-02](docs/screenshots/sc02-tahap2-single-stage.png)
@@ -57,6 +57,6 @@ Penghematan ukuran image: (1320 MB − 27.8 MB) ÷ 1320 MB × 100% ≈ **97,9%**
 ---
 
 ## 3. Bukti Audit Silang (Peer-Review)
-- **Tautan Pull Request (PR saya)**: https://github.com/obipranata2006/mk40-devops-lab/pull/NOMOR_PR
+- **Tautan Pull Request (PR saya)**: https://github.com/obipranata2006/mk40-devops-lab/pull/1
 - **Ringkasan Catatan Peer-Reviewer**: CATATAN_REVIEWER
 - **PR teman yang saya review**: LINK_PR_TEMAN
